@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rofood-Cart</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Icofont -->
+    <link rel="stylesheet" href="css/icofont.min.css">
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Cart-page Style -->
+    <link rel="stylesheet" href="css/cart-page.css">
+
+</head>
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg top-nav">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <h2>متجر أبصار الذهبية</h2>
+                <div class="me-3 h-100 d-flex align-items-center">
+                    <span class="icon ms-2 color-blue"><i class="bi bi-geo-alt"></i></span>
+                    <span>فرع المحمدية</span>
+                </div> 
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="color-main"><i class="fa fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="d-flex align-items-center top-nav-content">
+                    <span class="mx-2" id="dateTime"></span>
+
+                    <a href="" class="position-relative me-2">
+                        <span class="icon color-blue"><i class="bi bi-envelope"></i></span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-secondary">5 <span class="visually-hidden">unread messages</span></span>
+                        </span>
+                    </a>
+                    <a href="" class="position-relative me-3 ms-3">
+                        <span class="icon color-blue"><i class="bi bi-bell"></i></span>
+                        <span class="position-absolute translate-middle badge rounded-pill bg-secondary">5 <span class="visually-hidden">unread alerts</span></span>
+                    </a>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-secondary dropdown-toggle" href="#" id="navbarDropdown0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="icon color-blue"><i class="bi bi-globe2"></i></span>  
+                            </a>
+                            <ul class="dropdown-menu text-end" aria-labelledby="navbarDropdown0">
+                                <li><a class="dropdown-item ar" href="#">عربي</a></li>
+                                <li><a class="dropdown-item en" href="#">English</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-secondary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="images/person1.jpg" width="40" class="rounded-circle" alt="">
+                            أحمد علي    
+                            </a>
+                            <ul class="dropdown-menu text-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">الحساب</a></li>
+                            <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+                            <li><a class="dropdown-item" href="#">تبديل الفروع</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item color-red" href="#">تسجيل الخروج</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>         
+          </div>
+        </div>
+    </nav>
+
+    <!-- Start Side Nav -->
+    <nav class="side-nav">
+        <div class="side-nav-toggler">
+            <i class="bi bi-layout-text-sidebar"></i>
+        </div>
+        <div class="logo"><img src="images/logo.png" alt="rofood_logo"></div>
+        <ul class="menu">
+            <li><a class="active"><span class="icon"><i class="fa fa-home"></i></span>الواجهة الرئيسية</a></li>
+            <li><a><span class="icon"><i class="bi bi-journal-bookmark"></i></span>المبيعات</a></li>
+            <li><a><span class="icon"><i class="bi bi-file-earmark-text"></i></span>التقارير</a></li>
+            <li><a><span class="icon"><i class="fa fa-battery-full"></i></span>المخزون</a></li>
+            <li><a><span class="icon"><i class="fa fa-shopping-cart"></i></span>المشتريات</a></li>
+            <li><a><span class="icon"><i class="bi bi-clipboard-data"></i></span>الكاشير</a></li>
+            <li><a><span class="icon"><i class="fa fa-cog"></i></span>الإعدادات</a></li>
+            <li><a><span class="icon"><i class="bi bi-shield-check"></i></span>الدعم الفني</a></li>
+            
+        </ul>
+    </nav> <!-- End Side Nav -->
+
+    <!-- Start Content -->
+    <div class="content cart-page"> 
+        <h3 class="text-center fw-bold mb-3">إنشاء فاتورة جديدة</h3> 
+
+        <h5 class="fw-bold mb-3">الأقسام</h5>
+        <div class="categories">
+            <div class="row">
+                <div class="col-3 col-md-2">
+                    <div class="category active" data-category="category1">
+                        مشروبات أموري
+                        <span>Amore Drinks</span>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="category" data-category="category2">
+                        مشروبات أموري
+                        <span>Amore Drinks</span>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="category" data-category="category3">
+                        مشروبات أموري
+                        <span>Amore Drinks</span>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="category" data-category="category4">
+                        مشروبات أموري
+                        <span>Amore Drinks</span>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="category" data-category="category5">
+                        مشروبات أموري
+                        <span>Amore Drinks</span>
+                    </div>
+                </div>
+                <div class="col-3 col-md-2">
+                    <div class="category" data-category="category6">
+                        مشروبات أموري
+                        <span>Amore Drinks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products active" data-category="category1">
+            <div class="product" data-arname="بسكويت" data-name="biscuit1" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit2" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit3" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit4" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit5" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit6" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit7" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit8" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit9" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit10" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit11" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit12" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit13" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            <div class="product" data-arname="بسكويت" data-name="biscuit14" data-price="1">
+                <span>بسكويت</span><span>biscuit</span>1.00
+            </div>
+            
+        </div>
+        <div class="products" data-category="category2">
+            <div class="product"><span>منتج 2</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+        </div>
+        <div class="products" data-category="category3">
+            <div class="product"><span>منتج 3</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+            <div class="product"><span>بسكويت</span><span>biscuit</span>1.00</div>
+        </div>
+        <div class="products" data-category="category4"></div>
+        <div class="products" data-category="category5"></div>
+        <div class="products" data-category="category6"></div>
+        
+        <div class="added-items">
+            <h4>الأصناف التي تمت إضافتها</h4>
+            <div class="items">
+            </div>
+        </div>
+
+        <div class="payment mt-3">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6 payment-data">
+                        <h5>بيانات الدفع</h5>
+                        <div>
+                            <div class="form-group">
+                                <label for="">المبلغ الخاضع للضريبة</label>
+                                <input type="text" disabled class="total">
+                            </div>
+                            <div class="form-group">
+                                <label for="">الضريبة</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="">المجموع شامل الضريبة</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="">رقم الجوال</label>
+                                <input type="text" style="width: 535px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>طريقة الدفع</h5>
+                        <div class="form-group">
+                            <label for=""><input type="checkbox" class="form-check-input" checked name="" id=""> كاش</label>
+                            <input type="text" style="width: 535px; max-width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label for=""><input type="checkbox" class="form-check-input" checked name="" id=""> بطاقة</label>
+                            <input type="text" style="width: 535px; max-width: 100%;">
+                        </div>
+                        <div class="form-group">
+                            <label for=""><input type="checkbox" class="form-check-input" checked disabled name="" id=""> STC Pay</label>
+                            <input type="text" style="width: 535px; max-width: 100%;">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="">ملاحظة خاصة</label>
+                            <input type="text" style="width: 100%;text-align: right;">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group text-start">
+                            <button type="submit" class="btn btn-main">إنشاء فاتورة</button>
+                            <button class="btn btn-green mx-3">حفظ الفاتورة مؤقتا</button>
+                            <button type="reset" class="btn btn-red">إلغاء الطلب</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+    
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart-script.js"></script>
+
+
+    
+
+
+</body>
+</html>

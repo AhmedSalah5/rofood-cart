@@ -1,0 +1,203 @@
+.cart-page{
+    font-family: 'arabic-ui';
+}
+.categories .category{
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 25px;
+
+}
+.categories .category span{display: block;}
+.categories .category:hover,.categories .category.active{
+    background-color: blue;
+    color: #fff;
+    transition: all 0.3s;
+}
+.products{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 20px;
+    display: none;
+}
+.products.active{
+    display: grid;
+}
+.products .product{
+    font-size: 22px;
+    text-align: center;
+    background-color: #fff;
+    color: blue;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.products .product span{
+    display: block;
+}
+.products .product:hover, .products .product.active{
+    border: 1px solid blue;
+    box-shadow: 0 0 2px #666;
+}
+.added-items{
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+}
+.added-items h4{
+    margin-bottom: 1.5rem !important;
+}
+.items{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+}
+.item{
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    border: 2px solid blue;
+    color: blue;
+}
+.item > span{
+    display: block;
+}
+.item .delete{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    top: -15px;
+    left: -15px;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+}
+.count-div{
+    width: 100%;
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.count-div button{
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem !important;
+}
+.count-div .count{
+    width: 50px;
+    text-align: center;
+    border: none !important;
+    color: blue;
+    outline: none;
+}
+/* Chrome, Safari, Edge, Opera */
+.count-div .count::-webkit-outer-spin-button,
+.count-div .count::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.count {
+  -moz-appearance: textfield;
+}
+
+/*payment data form*/
+.payment .form-group{
+    margin: 35px 0;
+}
+.payment input[type='text']{
+    border: none;
+    outline: none;
+    display: block;
+    padding: 10px 5px;
+    font-size: 22px;
+    text-align: center;
+    width: 252px;
+    max-width: 100% !important;
+}
+.payment input:disabled{
+    background-color: #f1f1f1;
+}
+.payment input[type='checkbox']:disabled{
+    background-color: #b3b3ab;
+}
+.payment label{
+    font-size: 20px;
+}
+
+
+/*Responsive Style*/
+@media(max-width:767px) {
+    .categories .category{font-size: 11px;margin-bottom: 15px;}
+
+    .products{grid-template-columns: repeat(4,1fr);}
+    .product{font-size: 11px !important;}
+    .added-items{padding: 0;}
+    .items{gap: 10px; grid-template-columns: repeat(4,1fr)!important;}
+    .items .item{font-size: 11px !important;}
+    .items .item .delete{width: 20px;height: 20px;}
+    .count-div .count{width: 50px;}
+    .count-div button{width: 20px;height: 20px;}
+    .payment input[type='text']{font-size: 16px;}
+    .payment label{
+        font-size: 14px;
+    }
+
+    .payment-data > div{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .payment-data .form-group{
+        width: 40%;
+    }
+    .payment-data input{
+        width: 155px !important;
+    }
+
+    
+}
+ @media(max-width:991px){
+    .items .item .delete{width: 25px;height: 25px;}
+    .count-div .count{width: 50px;}
+    .count-div button{width: 25px;height: 25px;}
+    .products{grid-template-columns: repeat(6,1fr);}
+    .payment .form-group{
+        margin: 18px 0;
+    }
+}
+
+@media(max-width:1200px){
+    .added-items{padding: 0;}
+    .items{gap: 10px; grid-template-columns: repeat(5,1fr);}
+    .items .item{font-size: 16px !important;}
+    .items .item .delete{width: 20px;height: 20px;}
+    .count-div .count{width: 40px;}
+}
+@media(min-width:1201px){
+    .count-div .count{width: 70px;}
+}
+
